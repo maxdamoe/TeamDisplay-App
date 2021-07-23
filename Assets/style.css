@@ -1,0 +1,13 @@
+.main {
+    background-color: black;
+    width:400px;
+    height:600px;
+    border:solid chartreuse 4px;
+}
+
+.title {
+    background-color: white;
+    width:400px;
+    height:200px;
+
+}
