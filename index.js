@@ -14,7 +14,12 @@ let employee = class Employee {
 
 
 const intern = class Intern {
-    constructor()
+    constructor(name, ID, github, officeNumber, ){
+        this.name = name
+        this.id = ID
+        this.github = github 
+        this.officeNumber = officeNumber
+    }
 }
 
 let intern1 = new Intern(school)
