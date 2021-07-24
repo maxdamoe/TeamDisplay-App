@@ -11,3 +11,33 @@
     height:200px;
 
 }
+
+.identification {
+    background-color:white;
+    width:200px;
+    height:100px;
+    top:50px;
+    left:50px;
+    position:relative;
+    border: solid blue 2px;
+}
+
+.email {
+    background-color:white;
+    width:200px;
+    height:100px;
+    top:50px;
+    left:50px;
+    position:relative;
+    border: solid blue 2px;
+}
+
+.github {
+    background-color:white;
+    width:200px;
+    height:100px;
+    top:50px;
+    left:50px;
+    position:relative;
+    border: solid blue 2px;
+}
