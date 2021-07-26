@@ -1,10 +1,11 @@
 const Employee = require('../lib/employee');
 
 test('creates a player object', () => {
-    const employee = new Player('Dave');
+    const employee = new Employee('Dave');
   
     expect(employee.name).toBe('Dave');
-    expect(employee.health).toEqual(expect.any(Number));
-    expect(employee.strength).toEqual(expect.any(Number));
-    expect(employee.agility).toEqual(expect.any(Number));
+    expect(employee.id).toEqual(expect.any(String));
+    expect(employee.email).toEqual(expect.any(String));
+    expect(employee.agility).toEqual(expect.any(String));
+    expect(employee.getName()).toHaveProperty('name')
   });
