@@ -6,6 +6,7 @@ const Intern = require("./lib/intern.js");
 const Engineer = require("./lib/engineer.js");
 
 
+
 const questions = () =>
   inquirer.prompt([
     {
@@ -118,7 +119,7 @@ questions()
 
   
 
-  while ((createNewEmployee = "yes" && employeeArr.length <= 5)) {
+  while ((createNewEmployee == "yes" && employeeArr.length <= 5)) {
     await newEntry().then(async (employeeType) => {
       if (employeeType.engineerOrIntern == "Engineer") {
         await engineerQuestions().then((engineer) => {
@@ -132,6 +133,7 @@ questions()
           );
           if (engineer.another != 'yes') {
               createNewEmployee = 'no'
+              return;
           }
         });
       } else if (employeeType.engineerOrIntern == "Intern") {
@@ -146,16 +148,21 @@ questions()
           );
           if (intern.another != "yes") {
             createNewEmployee = "no";
+            return;
           }
         });
-      } else {engineer.another = 'no'}
+      } else if (employeeType.engineerOrIntern == 'Finish building team'){ 
+          createNewEmployee = 'no';
+          return;
+    }
     });
   }
   
- (employeeArr) => fs.appendFile('index.html', generatePage(employeeArr), (err) => { 
+   fs.appendFile('index.html', generatePage(employeeArr), (err) => { 
         if (err)  
         console.log(err); 
         });
+
 })
 // .then((data) => fs.appendFile('index.html', generatePage(data), (err) => { 
 //     if (err)  

@@ -1,5 +1,80 @@
 
-const generatePage = () => {
+
+
+const runTheDamnApp = employeeArr.forEach(employee => { 
+    if (employee.getRole() == 'Engineer'){
+   return ` <div class="main">
+           <div class="role">
+               <h1> ${employee.getRole()} </h1>
+           </div>
+           <div class="name">
+               <h1>{data.name}</h1>
+               <h2> ${employee.getName()}</h2>
+           </div>
+           <div class="identification">
+               <p>ID: ${employee.getId()}</p>
+           </div>
+           <div class="email">
+               <p>Email: ${employee.getEmail()}</p>
+           </div>
+           <div class="github">
+               <p>Github: </p>
+           </div>
+       </div>
+       `
+} else if (employee.getRole() == 'intern'){
+   return `
+       <div class="main">
+           <div class="role">
+               <h1> ${employee.getRole()} </h1>
+           </div>
+           <div class="name">
+               <h1>{data.name}</h1>
+               <h2> ${employee.getName()}</h2>
+           </div>
+           <div class="identification">
+               <p>ID: ${employee.getId()}</p>
+           </div>
+           <div class="email">
+               <p>Email: ${employee.getEmail()}</p>
+           </div>
+           <div class="github">
+               <p>Github: ${employee.getSchool()}</p>
+           </div>
+       </div>
+   `
+} else if (employee.getRole() == 'Manager'){
+   return `
+   <div class="main">
+           <div class="role">
+               <h1> ${employee.getRole()} </h1>
+           </div>
+           <div class="name">
+               <h1>{data.name}</h1>
+               <h2> ${employee.getName()}</h2>
+           </div>
+           <div class="identification">
+               <p>ID: ${employee.getId()}</p>
+           </div>
+           <div class="email">
+               <p>Email: ${employee.getEmail()}</p>
+           </div>
+           <div class="github">
+               <p>Office numer: ${employee.getOffice()}</p>
+           </div>
+       </div>
+       `
+}
+    }
+);
+
+
+
+
+
+const generatePage = (employeeArr) => { 
+    // console.log(employeeArr)
+    employeeArr.forEach(employee => console.log(employee.getRole()))
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -15,74 +90,8 @@ const generatePage = () => {
 
 <body>
     <div class="row">
-        
+       
     
-
-${employeeArr.foreach(employee => { 
-     if (employee.getRole() == 'Engineer'){
-    return ` <div class="main">
-            <div class="role">
-                <h1> ${employee.getRole()} </h1>
-            </div>
-            <div class="name">
-                <h1>{data.name}</h1>
-                <h2> ${employee.getName()}</h2>
-            </div>
-            <div class="identification">
-                <p>ID: ${employee.getId()}</p>
-            </div>
-            <div class="email">
-                <p>Email: ${employee.getEmail()}</p>
-            </div>
-            <div class="github">
-                <p>Github: ${employee.getGithub()}</p>
-            </div>
-        </div>
-        `
-} else if (employee.getRole() == 'intern'){
-    return `
-        <div class="main">
-            <div class="role">
-                <h1> ${employee.getRole()} </h1>
-            </div>
-            <div class="name">
-                <h1>{data.name}</h1>
-                <h2> ${employee.getName()}</h2>
-            </div>
-            <div class="identification">
-                <p>ID: ${employee.getId()}</p>
-            </div>
-            <div class="email">
-                <p>Email: ${employee.getEmail()}</p>
-            </div>
-            <div class="github">
-                <p>Github: ${employee.getSchool()}</p>
-            </div>
-        </div>
-    `
-} else if (employee.getRole() == 'Manager'){
-    return `
-    <div class="main">
-            <div class="role">
-                <h1> ${data.manager1.getRole()} </h1>
-            </div>
-            <div class="name">
-                <h1>{data.name}</h1>
-                <h2> ${data.manager1.getName()}</h2>
-            </div>
-            <div class="identification">
-                <p>ID: ${data.manager1.getId()}</p>
-            </div>
-            <div class="email">
-                <p>Email: ${data.manager1.getEmail()}</p>
-            </div>
-            <div class="github">
-                <p>Github: ${data.manager1.getOffice()}</p>
-            </div>
-        </div>
-        `
-}
-}) }
 
 
 
