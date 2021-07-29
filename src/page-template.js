@@ -1,15 +1,16 @@
+const runTheDamnApp = (employeeArr) => {
+  let html = ``;
+  
 
-
-
-const runTheDamnApp = employeeArr.forEach(employee => { 
-    if (employee.getRole() == 'Engineer'){
-   return ` <div class="main">
+  employeeArr.forEach((employee) => { console.log(employee.getRole())
+    if (employee.getRole() == "Engineer") {
+      html += ` <div class="main">
+        <div class="move">
            <div class="role">
                <h1> ${employee.getRole()} </h1>
            </div>
            <div class="name">
-               <h1>{data.name}</h1>
-               <h2> ${employee.getName()}</h2>
+               <h2 class="role"> ${employee.getName()}</h2>
            </div>
            <div class="identification">
                <p>ID: ${employee.getId()}</p>
@@ -18,19 +19,21 @@ const runTheDamnApp = employeeArr.forEach(employee => {
                <p>Email: ${employee.getEmail()}</p>
            </div>
            <div class="github">
-               <p>Github: </p>
+               <p>Github: ${employee.getGithub()}</p>
            </div>
-       </div>
-       `
-} else if (employee.getRole() == 'intern'){
-   return `
+        </div>
+        </div>
+
+       `;
+    } else if (employee.getRole() == "Intern") {
+      html += `
        <div class="main">
-           <div class="role">
-               <h1> ${employee.getRole()} </h1>
+       <div class="move">
+           <div>
+               <h1 class="role"> ${employee.getRole()} </h1>
            </div>
            <div class="name">
-               <h1>{data.name}</h1>
-               <h2> ${employee.getName()}</h2>
+               <h2 class="role"> ${employee.getName()}</h2>
            </div>
            <div class="identification">
                <p>ID: ${employee.getId()}</p>
@@ -41,17 +44,19 @@ const runTheDamnApp = employeeArr.forEach(employee => {
            <div class="github">
                <p>Github: ${employee.getSchool()}</p>
            </div>
+        </div>
        </div>
-   `
-} else if (employee.getRole() == 'Manager'){
-   return `
+   `;
+    } else if (employee.getRole() == "Manager") {
+      html += `
    <div class="main">
-           <div class="role">
-               <h1> ${employee.getRole()} </h1>
+   <div class="move">
+           <div>
+               <h1 class="role"> ${employee.getRole()} </h1>
            </div>
            <div class="name">
-               <h1>{data.name}</h1>
-               <h2> ${employee.getName()}</h2>
+               <h1></h1>
+               <h2 class="role"> ${employee.getName()}</h2>
            </div>
            <div class="identification">
                <p>ID: ${employee.getId()}</p>
@@ -60,46 +65,44 @@ const runTheDamnApp = employeeArr.forEach(employee => {
                <p>Email: ${employee.getEmail()}</p>
            </div>
            <div class="github">
-               <p>Office numer: ${employee.getOffice()}</p>
+               <p>Office number: ${employee.getOffice()}</p>
            </div>
        </div>
-       `
-}
-    }
-);
-
-
-
-
-
-const generatePage = (employeeArr) => { 
-    // console.log(employeeArr)
-    employeeArr.forEach(employee => console.log(employee.getRole()))
-    return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./Assets/style.css" />
-
-    <title>Team project app</title>
-</head>
-
-<body>
-    <div class="row">
-       
+    </div>
     
+       `;
+    }
+    
+  })
+  return html
+};
 
+const generatePage = (employeeArr) => {
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="./Assets/style.css" />
+  
+      <title>Team project app</title>
+  </head>
+  
+  <body>
+  <div class="row">
+  ${runTheDamnApp(employeeArr)}
+  </div>
+      
+  
+  
+  
+  </body>
+  </html>
+  
+  `;
+};
 
-
-</body>
-</html>
-
-`
-}
-
-
-module.exports = generatePage; 
+module.exports = generatePage;

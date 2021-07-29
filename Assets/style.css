@@ -41,3 +41,17 @@
     position:relative;
     border: solid blue 2px;
 }
+
+.role {
+    color:aliceblue
+}
+
+.row {
+    left:5%;
+    position:relative
+}
+
+.move {
+    left:10%;
+    position:relative;
+}

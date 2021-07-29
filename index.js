@@ -51,7 +51,6 @@ const engineerQuestions = () =>
     },
     {
       type: "input",
-
       name: "engineerId",
       message: "Please enter engineer employee ID",
     },
@@ -63,7 +62,7 @@ const engineerQuestions = () =>
     },
     {
       type: "input",
-      name: "engineerGithub",
+      name: "Github",
       message: "Please enter engineer github username",
     },
     {
@@ -119,7 +118,7 @@ questions()
 
   
 
-  while ((createNewEmployee == "yes" && employeeArr.length <= 5)) {
+  while ((createNewEmployee == "yes" && employeeArr.length < 5)) {
     await newEntry().then(async (employeeType) => {
       if (employeeType.engineerOrIntern == "Engineer") {
         await engineerQuestions().then((engineer) => {
@@ -128,7 +127,7 @@ questions()
               engineer.engineerName,
               engineer.engineerId,
               engineer.engineerEmail,
-              engineer.engineerGithub
+              engineer.Github
             )
           );
           if (engineer.another != 'yes') {
@@ -164,36 +163,3 @@ questions()
         });
 
 })
-// .then((data) => fs.appendFile('index.html', generatePage(data), (err) => { 
-//     if (err)  
-//     console.log(err); 
-//     }));
-
-//   .catch((err) => console.error(err));
-
-
-
-  
-//   .then((data) =>
-//     fs.appendFile("index.html", generatePage(data), (err) => {
-//       if (err) console.log(err);
-//     })
-//   )
-//   .then(() =>
-//     console.log(
-//       "Success! Please check index.html to see your completed README file!"
-//     )
-//   )
-// .then((answer) => {
-
-//     console.log(manager1)
-//     if (answer.engineerOrIntern == 'Engineer'){
-//         console.log(answer.engineerOrIntern)
-//         engineerQuestions()
-//     } else if (answer.engineerOrIntern == 'Intern'){
-//         internQuestions()
-//     }
-//     generatePage(manager1, )
-// })
-
-// .then( answer => {if (answer.engineerOrIntern == 'Engineer') {() => {engineerQuestions()}} else {() => internQuestions()}})
