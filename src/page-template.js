@@ -1,8 +1,8 @@
 const runTheDamnApp = (employeeArr) => {
   let html = ``;
-  
 
-  employeeArr.forEach((employee) => { console.log(employee.getRole())
+  employeeArr.forEach((employee) => {
+    console.log(employee.getRole());
     if (employee.getRole() == "Engineer") {
       html += ` <div class="main">
         <div class="move">
@@ -19,7 +19,7 @@ const runTheDamnApp = (employeeArr) => {
                <p>Email: ${employee.getEmail()}</p>
            </div>
            <div class="github">
-               <p>Github: ${employee.getGithub()}</p>
+               <p>Github: <a href="https://github.com/${employee.getGithub()}"> ${employee.getGithub()}</a></p></p>
            </div>
         </div>
         </div>
@@ -42,7 +42,7 @@ const runTheDamnApp = (employeeArr) => {
                <p>Email: ${employee.getEmail()}</p>
            </div>
            <div class="github">
-               <p>Github: ${employee.getSchool()}</p>
+               <p>Intern University: ${employee.getSchool()}</p>
            </div>
         </div>
        </div>
@@ -72,9 +72,8 @@ const runTheDamnApp = (employeeArr) => {
     
        `;
     }
-    
-  })
-  return html
+  });
+  return html;
 };
 
 const generatePage = (employeeArr) => {
@@ -92,6 +91,9 @@ const generatePage = (employeeArr) => {
   </head>
   
   <body>
+  <div class="banner">
+    <h1> The Team </h1>
+  </div>
   <div class="row">
   ${runTheDamnApp(employeeArr)}
   </div>

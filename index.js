@@ -5,8 +5,6 @@ const Manager = require("./lib/manager.js");
 const Intern = require("./lib/intern.js");
 const Engineer = require("./lib/engineer.js");
 
-
-
 const questions = () =>
   inquirer.prompt([
     {
@@ -104,21 +102,20 @@ const internQuestions = () =>
     },
   ]);
 
-questions()
-.then(async (managerInfo) => {
-    const employeeArr = [];
-  employeeArr.push( new Manager(
-    managerInfo.managerName,
-    managerInfo.managerId,
-    managerInfo.managerEmail,
-    managerInfo.managerOfficeNumber
-  ));
+questions().then(async (managerInfo) => {
+  const employeeArr = [];
+  employeeArr.push(
+    new Manager(
+      managerInfo.managerName,
+      managerInfo.managerId,
+      managerInfo.managerEmail,
+      managerInfo.managerOfficeNumber
+    )
+  );
 
   let createNewEmployee = "yes";
 
-  
-
-  while ((createNewEmployee == "yes" && employeeArr.length < 5)) {
+  while (createNewEmployee == "yes" && employeeArr.length < 5) {
     await newEntry().then(async (employeeType) => {
       if (employeeType.engineerOrIntern == "Engineer") {
         await engineerQuestions().then((engineer) => {
@@ -130,9 +127,9 @@ questions()
               engineer.Github
             )
           );
-          if (engineer.another != 'yes') {
-              createNewEmployee = 'no'
-              return;
+          if (engineer.another != "yes") {
+            createNewEmployee = "no";
+            return;
           }
         });
       } else if (employeeType.engineerOrIntern == "Intern") {
@@ -150,16 +147,14 @@ questions()
             return;
           }
         });
-      } else if (employeeType.engineerOrIntern == 'Finish building team'){ 
-          createNewEmployee = 'no';
-          return;
-    }
+      } else if (employeeType.engineerOrIntern == "Finish building team") {
+        createNewEmployee = "no";
+        return;
+      }
     });
   }
-  
-   fs.appendFile('index.html', generatePage(employeeArr), (err) => { 
-        if (err)  
-        console.log(err); 
-        });
 
-})
+  fs.appendFile("index.html", generatePage(employeeArr), (err) => {
+    if (err) console.log(err);
+  });
+});

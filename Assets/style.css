@@ -1,57 +1,67 @@
 .main {
-    background-color: black;
-    width:400px;
-    height:600px;
-    border:solid chartreuse 4px;
+  background-color: black;
+  width: 400px;
+  height: 600px;
+  border: solid chartreuse 4px;
 }
 
 .title {
-    background-color: white;
-    width:400px;
-    height:200px;
-
+  background-color: white;
+  width: 400px;
+  height: 200px;
 }
 
 .identification {
-    background-color:white;
-    width:200px;
-    height:100px;
-    top:50px;
-    left:50px;
-    position:relative;
-    border: solid blue 2px;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  top: 50px;
+  left: 50px;
+  position: relative;
+  border: solid blue 2px;
 }
 
 .email {
-    background-color:white;
-    width:200px;
-    height:100px;
-    top:50px;
-    left:50px;
-    position:relative;
-    border: solid blue 2px;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  top: 50px;
+  left: 50px;
+  position: relative;
+  border: solid blue 2px;
 }
 
 .github {
-    background-color:white;
-    width:200px;
-    height:100px;
-    top:50px;
-    left:50px;
-    position:relative;
-    border: solid blue 2px;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  top: 50px;
+  left: 50px;
+  position: relative;
+  border: solid blue 2px;
 }
 
 .role {
-    color:aliceblue
+  color: aliceblue;
 }
 
 .row {
-    left:5%;
-    position:relative
+  margin-top: 5%;
+  left: 5%;
+  position: relative;
 }
 
 .move {
-    left:10%;
-    position:relative;
+  left: 10%;
+  position: relative;
+}
+
+.banner {
+  background-color: red;
+  border: 2px solid red;
+}
+
+.banner h1 {
+  position: relative;
+  left: 800px;
 }

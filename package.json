@@ -19,7 +19,7 @@
     "inquirer": "^8.1.2"
   },
   "devDependencies": {
-    "jes": "^0.6.1"
+    "jest": "^0.6.1"
   },
   "directories": {
     "lib": "lib"
